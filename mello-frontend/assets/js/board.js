@@ -1,12 +1,16 @@
 class Card {
   constructor(text) {
     this.text = text;
+    this.id = ++Card.lastId;
   }
 }
+
+Card.lastId = 0;
 
 class List {
   constructor(title) {
     this.title = title;
+    this.id = ++List.lastId;
     this.cards = [];
 
   }
@@ -16,8 +20,11 @@ class List {
   }
 }
 
+List.lastId = 0;
+
 class Board {
   constructor() {
+    this.id = ++Board.lastId;
     this.lists = [];
   }
 
@@ -26,3 +33,5 @@ class Board {
     this.lists.push(list);
   }
 }
+
+Board.lastId = 0;
